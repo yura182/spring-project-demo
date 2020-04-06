@@ -12,15 +12,18 @@ public class App {
         this.eventLogger = eventLogger;
     }
 
-    private void logEvent(String msg) {
-        String message = msg.replaceAll(client.getId().toString(), client.getFullName());
-        eventLogger.logEvent(message);
+    private void logEvent(Event event) {
+        String message = event.getMsg().replaceAll(client.getId().toString(), client.getFullName());
+        event.setMsg(message);
+        eventLogger.logEvent(event);
     }
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
         App app = applicationContext.getBean(App.class);
+        Event event = applicationContext.getBean(Event.class);
+        event.setMsg("Some event for user 1");
 
-        app.logEvent("Some event for user 1");
+        app.logEvent(event);
     }
 }
