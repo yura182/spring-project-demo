@@ -1,4 +1,6 @@
-package com.yura.spring.demo.course;
+package com.yura.spring.demo.course.logger;
+
+import com.yura.spring.demo.course.event.Event;
 
 public class ConsoleEventLogger implements EventLogger {
 

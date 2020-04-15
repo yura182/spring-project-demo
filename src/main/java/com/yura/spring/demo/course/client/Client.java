@@ -1,4 +1,4 @@
-package com.yura.spring.demo.course;
+package com.yura.spring.demo.course.client;
 
 public class Client {
     private Integer id;

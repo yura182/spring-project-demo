@@ -1,4 +1,4 @@
-package com.yura.spring.demo.course;
+package com.yura.spring.demo.course.event;
 
 import java.text.DateFormat;
 import java.util.Date;

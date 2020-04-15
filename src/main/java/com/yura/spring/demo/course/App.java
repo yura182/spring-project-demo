@@ -1,6 +1,10 @@
 package com.yura.spring.demo.course;
 
+import com.yura.spring.demo.course.client.Client;
+import com.yura.spring.demo.course.event.Event;
+import com.yura.spring.demo.course.logger.EventLogger;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
@@ -19,11 +23,16 @@ public class App {
     }
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+        ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
         App app = applicationContext.getBean(App.class);
         Event event = applicationContext.getBean(Event.class);
         event.setMsg("Some event for user 1");
 
         app.logEvent(event);
+        app.logEvent(event);
+        app.logEvent(event);
+        app.logEvent(event);
+        app.logEvent(event);
+        applicationContext.close();
     }
 }
