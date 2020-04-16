@@ -17,4 +17,13 @@
         <constructor-arg value="log.log" type="java.lang.String"/>
     </bean>
 
+    <bean id="combinedEventLogger" class="com.yura.spring.demo.course.logger.CombinedEventLogger">
+        <constructor-arg>
+            <list>
+                <ref bean="eventLogger"/>
+                <ref bean="cachedFileEventLogger"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
 </beans>
