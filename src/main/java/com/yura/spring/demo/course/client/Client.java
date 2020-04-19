@@ -1,14 +1,18 @@
 package com.yura.spring.demo.course.client;
 
-public class Client {
-    private Integer id;
-    private String fullName;
-    private String greeting;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-    public Client(Integer id, String fullName) {
-        this.id = id;
-        this.fullName = fullName;
-    }
+@Component
+public class Client {
+    @Value("${id}")
+    private Integer id;
+
+    @Value("${name}")
+    private String fullName;
+
+    @Value("${greeting}")
+    private String greeting;
 
     public String getGreeting() {
         return greeting;

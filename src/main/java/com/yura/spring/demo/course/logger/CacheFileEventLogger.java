@@ -1,7 +1,9 @@
 package com.yura.spring.demo.course.logger;
 
 import com.yura.spring.demo.course.event.Event;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class CacheFileEventLogger extends FileEventLogger {
         cache = new ArrayList<>();
     }
 
+    @PreDestroy
     public void destroy() {
         if (!cache.isEmpty()) {
             writeEventsFromCache();
