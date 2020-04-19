@@ -22,6 +22,10 @@ public class Event {
         this.msg = msg;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getMsg() {
         return msg;
     }
