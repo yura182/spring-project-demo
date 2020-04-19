@@ -38,7 +38,7 @@
 
     <bean id="app" class="com.yura.spring.demo.course.App">
         <constructor-arg ref="client"/>
-        <constructor-arg ref="cachedFileEventLogger"/>
+        <constructor-arg value="#{ T(com.yura.spring.demo.course.event.Event).isDay() ? cachedFileEventLogger : eventLogger }"/>
         <constructor-arg ref="loggerMap"/>
     </bean>
 
